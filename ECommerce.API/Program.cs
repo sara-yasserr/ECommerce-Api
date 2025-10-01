@@ -24,7 +24,17 @@ namespace ECommerce.API
             builder.Services.AddBusinessLogicServices();
             builder.Services.AddDataAccessServices(builder.Configuration);
             builder.Services.AddPresentationServices(builder.Configuration);
-
+            // Add CORS policy for Angular frontend
+            builder.Services.AddCors(options =>
+            {
+            options.AddPolicy("AllowAngular", policy =>
+           {
+            policy.WithOrigins("http://localhost:4200") // Angular dev server
+              .AllowAnyMethod()
+              .AllowAnyHeader()
+              .AllowCredentials();
+            });
+  });
             var app = builder.Build();
 
             // Configure the HTTP request pipeline
@@ -44,6 +54,8 @@ namespace ECommerce.API
             app.UseHttpsRedirection();
             app.UseStaticFiles(); // For serving product images
 
+            app.UseCors("AllowAngular");
+            
             app.UseAuthentication();
             app.UseAuthorization();
 
