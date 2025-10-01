@@ -1,0 +1,50 @@
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# Visual Studio cache/options
+.vs/
+.vscode/
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Database files
+*.mdf
+*.ldf
+*.ndf
+
+# NuGet
+*.nupkg
+*.snupkg
+**/packages/*
+
+# Migration files (optional - usually you DO include these)
+# **/Migrations/*
+
+# Configuration secrets
+appsettings.Development.json
+appsettings.Production.json
+**/appsettings.*.json
+
+# Keep the base appsettings
+!appsettings.json
+
+# OS files
+.DS_Store
+Thumbs.db
